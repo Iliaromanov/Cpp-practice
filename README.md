@@ -1,2 +1,2 @@
-# CS246-Cpp
+# C++ Practice
 This repo contains the code I write while learning C++
