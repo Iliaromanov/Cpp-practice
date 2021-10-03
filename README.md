@@ -1,2 +1,2 @@
 # CS246-Cpp
-My C++ work from CS246
+This repo contains the code I write while learning C++
