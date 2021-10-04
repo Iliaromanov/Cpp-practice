@@ -36,8 +36,12 @@ int main() {
         cout << token << endl;
     }
 
-
-
+    // using ostringstream to convert int to str
+    ostringstream new_ss;
+    int lo {1}, hi {100};
+    new_ss << "The range is: " << lo << "-" << hi;
+    string new_s { new_ss.str() };
+    cout << new_s << endl;
 }
 
 
