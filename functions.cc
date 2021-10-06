@@ -50,6 +50,6 @@ char add1(char c) {
     return c += 1;
 }
 
-void inc(int *n) { // pass by ref
+void inc(int *n) { // pass by pointer
     ++*n;
 }
