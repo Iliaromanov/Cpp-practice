@@ -8,12 +8,17 @@ string greet(string s = "there"); // default
 int add1(int n);
 int add1(int n, int m);
 char add1(char c);
+void inc(int *n);
 
 int main() {
     cout << boolalpha << even(3) << " " << odd(3) << endl;
     cout << greet() << endl;
     cout << greet("Ilia") << endl;
     cout << add1(1) << " " << add1(1, 1) << " " << add1('a') << endl;
+    int n = 5;
+    cout << n << endl;
+    inc(&n);
+    cout << n << endl;
 }
 
 bool even(unsigned int n) {
@@ -43,4 +48,8 @@ int add1(int n, int m) {
 
 char add1(char c) {
     return c += 1;
+}
+
+void inc(int *n) { // pass by ref
+    ++*n;
 }
