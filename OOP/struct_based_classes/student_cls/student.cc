@@ -7,12 +7,16 @@ int capGrade( int grade ) {
     return grade;
 }
 
-Student::Student( int assignments, int mt, int final ) {
+Student::Student( const int id, int assignments, int mt, int final ) 
+   : id{id}, assignments{capGrade(assignments)}, mt{capGrade(mt)}, final{capGrade(final)} {
+
+    
+    // initializing without const int id
     // must use 'this' keyword here since param names are the same as classes data field names. 
     // (similar to Python __init__ constructor method)
-    this->assignments = capGrade( assignments );
-    this->mt = capGrade( mt );
-    this->final = capGrade( final );
+    // this->assignments = capGrade( assignments );
+    // this->mt = capGrade( mt );
+    // this->final = capGrade( final );
 }
 
 float Student::grade() { // :: is the scope resolution operator
