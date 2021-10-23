@@ -4,6 +4,7 @@
 struct Student {
     int assignments, mt, final;
 
+    Student(int assignments, int mt, int final); // constructor
     float grade(); // method
 };
 
