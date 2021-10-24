@@ -1,5 +1,6 @@
 #ifndef _NODE_H_
 #define _NODE_H_
+#include <utility>
 
 struct Node {
     int data;
@@ -20,11 +21,12 @@ struct Node {
         return *this; // return modified lhs object
     }
     // Could alternatively do:
-    /*
+    
     void swap( Node & other ) {
       std::swap( data, other.data );
       std::swap( next, other.next );
     }
+    /*
     Node & operator=( const Node & other) {
         Node tmp{ other };
         swap( tmp );
@@ -33,8 +35,14 @@ struct Node {
     */
     // Move Constructor
     // 'steals' data from rvalue
+    // sample use: Node n1{1, nullptr}; Node n2{ f(n) };
     Node(Node &&other): data{other.data}, next{other.next} {
         other.next = nullptr; // to ensure the data we stole from the rvalue is not destroyed when rvalue is destroyed
+    }
+    // Move assignment operator
+    Node &operator=(Node &&other) {
+        swap(other);
+        return *this;
     }
     // Destructor:
     // invoked whenever delete is called on a Node pointer
