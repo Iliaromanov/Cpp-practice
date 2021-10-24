@@ -24,15 +24,18 @@ struct Node {
     void swap( Node & other ) {
       std::swap( data, other.data );
       std::swap( next, other.next );
-   }
+    }
     Node & operator=( const Node & other) {
         Node tmp{ other };
         swap( tmp );
         return *this;
     }
     */
-
-
+    // Move Constructor
+    // 'steals' data from rvalue
+    Node(Node &&other): data{other.data}, next{other.next} {
+        other.next = nullptr; // to ensure the data we stole from the rvalue is not destroyed when rvalue is destroyed
+    }
     // Destructor:
     // invoked whenever delete is called on a Node pointer
     // thus its recursive since it uses delete
