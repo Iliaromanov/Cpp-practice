@@ -10,5 +10,10 @@ struct Node {
     // Copy constructor that performs deep copy on nodes
     Node(const Node &n): data{n.data},
                          next{n.next ? new Node{*n.next} : nullptr} {}
+    // Destructor:
+    // invoked whenever delete is called on a Node pointer
+    // thus its recursive since it uses delete
+    // this allows deallocation of all memory in a Llist by just freeing the root node
+    ~Node() {delete next;}
 };
 #endif
