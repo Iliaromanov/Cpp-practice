@@ -19,6 +19,9 @@ Student::Student( const int id, int assignments, int mt, int final )
     // this->final = capGrade( final );
 }
 
+Student::Student(const Student &other)
+    : assignments{other.assignments}, mt{other.mt}, final{other.final} {} // copy constructor
+
 float Student::grade() { // :: is the scope resolution operator
     // 'this' is automatically added by the compiler if its not mentioned explicitly
     // some ppl feel very strongly about whether to use this when it is unneeded or not
