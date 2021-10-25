@@ -21,7 +21,6 @@ struct Node {
         return *this; // return modified lhs object
     }
     // Could alternatively do:
-    
     void swap( Node & other ) {
       std::swap( data, other.data );
       std::swap( next, other.next );
