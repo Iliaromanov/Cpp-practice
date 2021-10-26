@@ -3,6 +3,7 @@
 #define _STUDENT_H_
 
 struct Student {
+    static int numStudents; // counts total number of students
     const int id; // has to be initialized using MIL
     int assignments, mt, final;
 

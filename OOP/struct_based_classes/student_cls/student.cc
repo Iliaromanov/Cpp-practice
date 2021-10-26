@@ -1,6 +1,8 @@
 //implementation
 #include "student.h"
 
+int Student::numStudents = 0; // set initial student count to 0
+
 int capGrade( int grade ) {
     if (grade < 0) return 0;
     if (grade > 100 ) return 100;
@@ -10,7 +12,7 @@ int capGrade( int grade ) {
 Student::Student( const int id, int assignments, int mt, int final ) 
    : id{id}, assignments{capGrade(assignments)}, mt{capGrade(mt)}, final{capGrade(final)} {
 
-    
+    numStudents++;
     // initializing without const int id
     // must use 'this' keyword here since param names are the same as classes data field names. 
     // (similar to Python __init__ constructor method)
