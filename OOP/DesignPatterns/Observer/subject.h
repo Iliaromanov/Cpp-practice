@@ -3,7 +3,7 @@
 #include <vector>
 #include "observer.h"
 
-class Subject {
+class Subject { // abstract base class
    std::vector<Observer*> observers;
 
  public:
