@@ -1,7 +1,7 @@
 # C++ Practice
 This repo contains the code I write while learning C++
 
-- Super cool Makefile template for g++ that automatically tracks all of your codes dependencies
+- Cool Makefile template for g++ that automatically tracks dependencies
 ```javascript
 CXX=g++
 CXXFLAGS= -MMD
