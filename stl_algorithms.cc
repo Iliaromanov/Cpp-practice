@@ -29,4 +29,10 @@ int main() {
     vector<int> w; // or could do w(5) to not have to use back_inserter
     copy(v.begin(), v.end(), back_inserter(w)); // copies contents of v to w
     for_each(w.begin(), w.end(), print); // 2 3 4 5 6
+    cout << endl;
+
+    // transform (InputIterator first, InputIterator last, OutputIterator result, UnaryOperator op)
+    vector <int> x(w.size());
+    transform(w.begin(), w.end(), x.begin(), sub1);
+    for_each(x.begin(), x.end(), print); // 1 2 3 4 5
 }
